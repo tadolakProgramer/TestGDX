@@ -106,6 +106,7 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         testCompile "junit:junit:$junitVersion"
+        testImplementation 'org.hamcrest:hamcrest:2.1'
         
     }
 }
