@@ -52,7 +52,7 @@ public abstract class AbstractScreen implements Screen {
     public void render (float delta) {
         clearScreen();
         camera.update();
-        spriteBatch.setProjectionMatrix(camera.combined);
+        //spriteBatch.setProjectionMatrix(camera.combined);
 
     }
 
@@ -83,11 +83,13 @@ public abstract class AbstractScreen implements Screen {
     @Override
     public void dispose() {
         System.out.println("Koniec");
-        game.dispose();
+        this.dispose();
     }
 
     @Override
     public void resize(int width, int height) {
+        viewport.update(width,height);
+        camera.position.set(camera.viewportWidth/2,camera.viewportHeight/2,0);
 
         }
 

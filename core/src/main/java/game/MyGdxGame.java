@@ -5,6 +5,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.utils.I18NBundle;
+
+import game.Screens.CreatNewGameScreen;
 import game.Screens.StartGameScreen;;
 import java.util.Locale;
 
@@ -22,7 +24,7 @@ public class MyGdxGame extends Game {
 			this.setScreen(new StartGameScreen(this, true));
 		}
 		else {
-			this.setScreen(new StartGameScreen(this, false));
+			this.setScreen(new CreatNewGameScreen(this));
 		}
 
 
