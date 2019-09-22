@@ -36,7 +36,7 @@ public abstract class AbstractScreen implements Screen {
         viewport.apply();
         stage = new Stage(viewport);
         spriteBatch = new SpriteBatch();
-        Gdx.input.setInputProcessor(stage);
+        //Gdx.input.setInputProcessor(stage);
     }
 
 
