@@ -2,17 +2,18 @@ package game.Screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.GL30;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 import game.MyGdxGame;
 
-
 import static game.MyGdxGame.GAME_WIDTH;
+
 
 /**
  * Created by User on 2018-03-07.
@@ -43,7 +44,7 @@ public abstract class AbstractScreen implements Screen {
 
     private void createCamera() {
         camera = new OrthographicCamera();
-        camera.setToOrtho(false, GAME_WIDTH, MyGdxGame.GAME_HEIGHT);
+        camera.setToOrtho(false, MyGdxGame.GAME_WIDTH, MyGdxGame.GAME_HEIGHT);
         camera.update();
     }
 
@@ -58,7 +59,7 @@ public abstract class AbstractScreen implements Screen {
 
     private void clearScreen() {
         Gdx.gl.glClearColor(0, 0, 0, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT);
     }
 
     @Override

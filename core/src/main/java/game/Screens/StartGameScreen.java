@@ -11,7 +11,7 @@ public class StartGameScreen extends AbstractScreen {
     private boolean isNewGame;
     private Preferences preferences;
 
-    public StartGameScreen(MyGdxGame game, boolean isNewGame) {
+    public StartGameScreen(final MyGdxGame game, boolean isNewGame) {
         super(game);
         isNewGame = isNewGame;
     }
