@@ -13,6 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 import java.io.IOException;
 
+import game.HelperXML.MakeXML;
 import game.MyGdxGame;
 
 public class CreatNewGameScreen extends AbstractScreen {
@@ -25,15 +26,17 @@ public class CreatNewGameScreen extends AbstractScreen {
     private String playerName;
     private MyGdxGame game;
     private double money;
+    private String locRoot;
 
     public CreatNewGameScreen(final MyGdxGame game) {
         super(game);
         this.game = game;
-        //Gdx.input.setInputProcessor(stage);
+        Gdx.input.setInputProcessor(stage);
         init();
     }
 
     private void init(){
+        locRoot = Gdx.files.getLocalStoragePath();
         skin = new Skin(Gdx.files.internal("data/skin/flat-earth-ui.json"));
         createTablePlayer();
     }
@@ -69,23 +72,23 @@ public class CreatNewGameScreen extends AbstractScreen {
         tablePlayer.row().colspan(2);
         tablePlayer.add(textButtonClose.center().pad(10));
 
-/*
+
         textButtonClose.addListener(new ClickListener() {
+
             @Override
             public void  touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 tablePlayer.remove();
                 try {
-                    String filePath = getLoclaPath();
-                    //MackeXML.createDocument(filePath, playerName);
-                    MackeXML.createSpaceship(filePath);
+                    String filePath = locRoot;
+                    MakeXML.createPlayerFile(playerName);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                game.setScreen(new SpalshScreen(game));
+                //game.setScreen(new SpalshScreen(game));
 
             }
         });
-*/
+
         stage.addActor(tablePlayer);
     }
 
