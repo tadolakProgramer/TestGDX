@@ -81,6 +81,7 @@ public class CreatNewGameScreen extends AbstractScreen {
                 try {
                     String filePath = locRoot;
                     MakeXML.createPlayerFile(playerName);
+                    MakeXML.createSpaceship();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
