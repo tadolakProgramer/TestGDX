@@ -17,8 +17,20 @@ public class MyGdxGame extends Game {
 	public final static  int GAME_WIDTH = 1920;
 	public final static  int GAME_HEIGHT = 1080;
 
+	//Files
+	public final static String FILE_SPRITE_ATLAS = "data/planets.pack";
+	public final static String FILE_CARGO_ATLAS = "data/cargo.atlas";
+	public final static String FILE_SPACESHIP = "data/SpaceShip_Empty.png";
+	public final static String FILE_SPACE_SHIP = "spaceship.xml";
+	public final static String FILE_PLAYER = "player.xml";
+	public final static String FILE_PLANETS = "data/cars.xml";
+	public final static String FILE_SHIP_MODULES = "data/spacemodule.xml";
+
 	@Override
 	public void create() {
+
+		FileHandle ProgressFileHandle = Gdx.files.local(FILE_PLAYER);
+		ProgressFileHandle.file().delete();
 
 		if (testGameFile()){
 			this.setScreen(new StartGameScreen(this, true));
