@@ -15,11 +15,11 @@ import static game.MyGdxGame.FILE_SPACE_SHIP;
 
 public class MakeXML {
 
-    public static void createPlayerFile(String playerName) throws IOException {
+    public static void createPlayerFile(String playerName) {
 
             Document document = DocumentHelper.createDocument();
             Element root = document.addElement("player");
-            root.addElement("Name").addText(playerName);
+            root.addElement("CorpoName").addText(playerName);
             root.addElement("money").addText("5001");
             root.addElement("planetCount").addText("0");
 
@@ -28,7 +28,7 @@ public class MakeXML {
 
     }
 
-    public static void  createSpaceship() throws IOException {
+    public static void  createSpaceship() {
 
             Document document = DocumentHelper.createDocument();
             Element root = document.addElement("ship");
